@@ -323,6 +323,16 @@
     
   </table>
 </div>
-
+  </a>
+  <audio id="bgMusic" loop preload="metadata"><source src="assets/cincin.mp3" type="audio/mpeg"></audio>
+  <script>
+    const bgMusic=document.getElementById('bgMusic');
+    const musicToggle=document.getElementById('musicToggle');
+    musicToggle?.addEventListener('click',async()=>{
+      if(bgMusic.paused){try{await bgMusic.play();musicToggle.textContent='Ⅱ';musicToggle.setAttribute('aria-label','Jeda musik')}catch(e){}}
+      else{bgMusic.pause();musicToggle.textContent='▶';musicToggle.setAttribute('aria-label','Putar musik');}
+    });
+  </script>
+</body>
 </body>
 </html>
